@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-20",
+  "lessonId": "lesson-20",
+  "title": "Multimodal and Cross-Model Prompting",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "After switching providers, a classifier starts returning 'The category is: Billing.' instead of 'BILLING'. What was the root cause?",
+      "options": [
+        { "id": "a", "text": "The new model is broken" },
+        { "id": "b", "text": "The prompt relied on the old model's default behavior instead of an explicit format" },
+        { "id": "c", "text": "Billing is not a valid category" },
+        { "id": "d", "text": "The new model doesn't support classification" }
+      ],
+      "answer": "b",
+      "explanation": "Portable prompts state the format explicitly, show examples, and validate in code, so they don't depend on one model's habits."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "prompt": "Which practices improve prompts that include images? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "Say exactly what to look at or extract" },
+        { "id": "b", "text": "Label multiple images and refer to them by label" },
+        { "id": "c", "text": "Ask for a description before the analysis" },
+        { "id": "d", "text": "Trust all numbers read from the image without checking" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "Focused instructions, labels, and describe-then-analyze help. Numbers read from images should be validated."
+    },
+    {
+      "id": "q3",
+      "type": "fill-blank",
+      "prompt": "Trying a cheaper model first and escalating to a stronger one when validation fails is called a model ____.",
+      "answer": ["cascade"],
+      "explanation": "Cascades pay for the expensive model only when needed, as long as you can detect failure."
+    },
+    {
+      "id": "q4",
+      "type": "single-choice",
+      "prompt": "Which is the best way to decide which model to use for a task?",
+      "options": [
+        { "id": "a", "text": "Pick the one with the best reputation online" },
+        { "id": "b", "text": "Test candidates on your own test set, weighing quality, cost per completed task, latency, and data needs" },
+        { "id": "c", "text": "Always use the newest model" },
+        { "id": "d", "text": "Use whichever model a book describes as 'the creative one'" }
+      ],
+      "answer": "b",
+      "explanation": "Models change with every release. Choose with data from your own task rather than folklore."
+    },
+    {
+      "id": "q5",
+      "type": "ordering",
+      "prompt": "Order the steps of a safe prompt migration to a new model.",
+      "items": [
+        { "id": "simplify", "text": "Simplify: remove workarounds the old model needed" },
+        { "id": "baseline", "text": "Run your test set on old and new models with the current prompt" },
+        { "id": "switch", "text": "Re-run, compare, and only then switch traffic" },
+        { "id": "notes", "text": "Read the vendor's migration notes" }
+      ],
+      "answer": ["baseline", "notes", "simplify", "switch"],
+      "explanation": "Measure first, learn what changed, simplify before adding, then verify before switching."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each image-generation prompt ingredient to an example.",
+      "pairs": [
+        { "left": "Style or medium", "right": "Flat vector illustration" },
+        { "left": "Composition", "right": "Wide shot with empty sky on the left" },
+        { "left": "Lighting and color", "right": "Soft sunrise light, pastel palette" },
+        { "left": "Constraint", "right": "No text or logos in the image" }
+      ],
+      "explanation": "Image models respond to descriptive ingredients rather than instructions about the task."
+    }
+  ]
+}

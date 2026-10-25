@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-11",
+  "lessonId": "lesson-11",
+  "title": "Chain-of-Thought Reasoning",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "Which phrase did Kojima et al. (2022) show could boost zero-shot reasoning accuracy?",
+      "options": [
+        { "id": "a", "text": "Answer as fast as possible." },
+        { "id": "b", "text": "Let's think step by step." },
+        { "id": "c", "text": "You are the smartest model in the world." },
+        { "id": "d", "text": "Do not make mistakes." }
+      ],
+      "answer": "b",
+      "explanation": "Adding 'Let's think step by step' raised MultiArith accuracy from 17.7% to 78.7% with text-davinci-002, with no examples."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "prompt": "Which tasks are good candidates for chain-of-thought? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "Multi-step arithmetic word problems" },
+        { "id": "b", "text": "Comparing several options against ranked criteria" },
+        { "id": "c", "text": "Debugging a logic error" },
+        { "id": "d", "text": "Looking up a country's capital" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "CoT helps on problems with dependent steps. For simple lookups it mainly adds cost and latency."
+    },
+    {
+      "id": "q3",
+      "type": "fill-blank",
+      "prompt": "Whether a model's stated explanation reflects the real reason for its answer is called ____.",
+      "answer": ["faithfulness", "faithful", "faithfulness of explanations"],
+      "explanation": "Turpin et al. (2023) showed CoT explanations can be unfaithful, rationalizing biased answers without mentioning the bias."
+    },
+    {
+      "id": "q4",
+      "type": "single-choice",
+      "prompt": "How does Anthropic's guide suggest prompting models with built-in thinking?",
+      "options": [
+        { "id": "a", "text": "Always script every reasoning step in detail" },
+        { "id": "b", "text": "Prefer general instructions like 'think thoroughly' over prescriptive step-by-step plans" },
+        { "id": "c", "text": "Forbid the model from reasoning" },
+        { "id": "d", "text": "Only use zero-shot prompts with no output format" }
+      ],
+      "answer": "b",
+      "explanation": "The guide says general instructions often produce better reasoning than a hand-written plan, and treats manual CoT as a fallback for when thinking is off."
+    },
+    {
+      "id": "q5",
+      "type": "ordering",
+      "prompt": "Order the steps of a structured CoT workflow in an app.",
+      "items": [
+        { "id": "extract", "text": "Extract the <answer> section in code" },
+        { "id": "prompt", "text": "Ask for reasoning in <reasoning> tags and the result in <answer> tags" },
+        { "id": "verify", "text": "Verify the answer independently before using it" },
+        { "id": "missing", "text": "Handle responses where the tag is missing" }
+      ],
+      "answer": ["prompt", "extract", "missing", "verify"],
+      "explanation": "Request tagged output, extract the answer, handle missing tags, and verify rather than trusting the reasoning."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each approach to its description.",
+      "pairs": [
+        { "left": "Few-shot CoT", "right": "Worked-reasoning examples before the new problem" },
+        { "left": "Zero-shot CoT", "right": "A reasoning trigger with no examples" },
+        { "left": "Manual CoT with tags", "right": "Visible reasoning plus an extractable answer" },
+        { "left": "Built-in reasoning", "right": "The model thinks internally, often tuned by an effort setting" }
+      ],
+      "explanation": "These are the main ways to get step-by-step reasoning, from classic prompting techniques to model features."
+    }
+  ]
+}

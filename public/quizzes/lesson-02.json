@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-02",
+  "lessonId": "lesson-02",
+  "title": "How Language Models Read Your Prompt",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "You want answers short enough for a help widget. Which length instruction works best?",
+      "options": [
+        { "id": "a", "text": "Answer in 50 tokens." },
+        { "id": "b", "text": "Answer in 2 short sentences, under 40 words." },
+        { "id": "c", "text": "Answer briefly-ish." },
+        { "id": "d", "text": "Set a low output-token limit and say nothing in the prompt." }
+      ],
+      "answer": "b",
+      "explanation": "Tokens don't map neatly to words and vary by model, and a token limit truncates rather than shortens. Sentences and word counts are units both you and the model can work with."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "prompt": "Which statements about the context window are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "It includes the system prompt, the conversation, documents, and the model's own response" },
+        { "id": "b", "text": "It is measured in tokens" },
+        { "id": "c", "text": "The model remembers everything from your other chats outside the window" },
+        { "id": "d", "text": "Information buried in the middle of a long context is more likely to be missed" }
+      ],
+      "answer": ["a", "b", "d"],
+      "explanation": "The context window is everything the model sees in one request, measured in tokens. There's no memory outside it, and research found information in the middle of long contexts is used less reliably."
+    },
+    {
+      "id": "q3",
+      "type": "fill-blank",
+      "prompt": "Fluent, confident output that is false or unsupported, such as a made-up citation, is called a ____.",
+      "answer": ["hallucination", "hallucinations"],
+      "explanation": "Models generate plausible text rather than retrieving verified facts, so they can hallucinate specifics like statistics, quotes, and references."
+    },
+    {
+      "id": "q4",
+      "type": "single-choice",
+      "prompt": "Why can the same prompt give a different answer each time?",
+      "options": [
+        { "id": "a", "text": "The model retrains itself after every request" },
+        { "id": "b", "text": "The model picks each token by sampling from a probability distribution" },
+        { "id": "c", "text": "Your internet connection changes the prompt" },
+        { "id": "d", "text": "The model deliberately avoids repeating itself across users" }
+      ],
+      "answer": "b",
+      "explanation": "At each step the model has probabilities for many possible next tokens; sampling from them, rather than always taking the top one, produces variety."
+    },
+    {
+      "id": "q5",
+      "type": "ordering",
+      "prompt": "Order what happens when you send a prompt.",
+      "items": [
+        { "id": "detok", "text": "Tokens are turned back into readable text" },
+        { "id": "tok", "text": "Your text is split into tokens" },
+        { "id": "predict", "text": "The model computes probabilities for the next token" },
+        { "id": "append", "text": "A token is chosen and appended, and the step repeats" }
+      ],
+      "answer": ["tok", "predict", "append", "detok"],
+      "explanation": "Text is tokenized, the model predicts the next token's probabilities, picks and appends one, repeats until done, and the tokens are converted back to text."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each limitation to the best mitigation.",
+      "pairs": [
+        { "left": "Knowledge cutoff", "right": "Paste the facts or use a search tool" },
+        { "left": "Arithmetic slips", "right": "Have the model write or run code" },
+        { "left": "Forgets early instructions in a long chat", "right": "Summarize and restart in a fresh conversation" },
+        { "left": "Invented citations", "right": "Provide sources and verify every reference" }
+      ],
+      "explanation": "Each limitation has a root cause: missing recent data, token-level digit prediction, context limits, and plausible-text generation. The mitigations target those causes."
+    }
+  ]
+}

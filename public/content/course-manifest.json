@@ -1,0 +1,410 @@
+[
+  {
+    "id": "lesson-01",
+    "slug": "what-is-prompt-engineering",
+    "title": "What Is Prompt Engineering?",
+    "level": "beginner",
+    "order": 1,
+    "duration": 18,
+    "file": "beginner/what-is-prompt-engineering.md",
+    "summary": "What a prompt is, what happens when you send one, why the wording changes the answer so much, and how prompt engineering turns trial and error into a repeatable design-test-refine loop.",
+    "tags": [
+      "prompt-engineering",
+      "prompts",
+      "llm-basics",
+      "iteration",
+      "getting-started"
+    ]
+  },
+  {
+    "id": "lesson-02",
+    "slug": "how-language-models-work",
+    "title": "How Language Models Read Your Prompt",
+    "level": "beginner",
+    "order": 2,
+    "duration": 22,
+    "file": "beginner/how-language-models-work.md",
+    "summary": "Tokens, next-token prediction, attention, training, the context window, knowledge cutoffs, randomness, hallucination, and bias: the handful of mechanics that explain why prompts behave the way they do.",
+    "tags": [
+      "tokens",
+      "transformers",
+      "context-window",
+      "hallucination",
+      "llm-basics"
+    ]
+  },
+  {
+    "id": "lesson-03",
+    "slug": "clarity-and-specificity",
+    "title": "Clarity and Specificity",
+    "level": "beginner",
+    "order": 3,
+    "duration": 20,
+    "file": "beginner/clarity-and-specificity.md",
+    "summary": "The two habits behind most good prompts: saying exactly what you want in plain words, and filling in the who, what, why, how long, and what shape, plus the classic mistakes that make models guess.",
+    "tags": [
+      "clarity",
+      "specificity",
+      "golden-rule",
+      "delimiters",
+      "prompt-mistakes"
+    ]
+  },
+  {
+    "id": "lesson-04",
+    "slug": "anatomy-of-a-prompt",
+    "title": "The Anatomy of a Prompt",
+    "level": "beginner",
+    "order": 4,
+    "duration": 22,
+    "file": "beginner/anatomy-of-a-prompt.md",
+    "summary": "The building blocks of a prompt (role, context, input data, examples, instructions, rules, and output format), the C.R.E.A.T.E. framework for assembling them, how to order them, and how to turn a good prompt into a reusable template.",
+    "tags": [
+      "prompt-structure",
+      "create-framework",
+      "templates",
+      "xml-tags",
+      "prompt-elements"
+    ]
+  },
+  {
+    "id": "lesson-05",
+    "slug": "roles-personas-and-audience",
+    "title": "Roles, Personas, and Audience",
+    "level": "beginner",
+    "order": 5,
+    "duration": 22,
+    "file": "beginner/roles-personas-and-audience.md",
+    "summary": "How to give a model a role (the Persona pattern), tell it who it's talking to (the Audience Persona pattern), where standing roles belong (the system prompt), what personas can and can't do, and the ethics of role-play.",
+    "tags": [
+      "personas",
+      "system-prompts",
+      "audience",
+      "role-play",
+      "ethics"
+    ]
+  },
+  {
+    "id": "lesson-06",
+    "slug": "few-shot-examples",
+    "title": "Zero-, One-, and Few-Shot Examples",
+    "level": "beginner",
+    "order": 6,
+    "duration": 24,
+    "file": "beginner/few-shot-examples.md",
+    "summary": "How examples inside a prompt teach a model the task's format, labels, and style; how many to use and how to choose them; and the traps that research and practice have uncovered: order effects, label bias, and copied surface details.",
+    "tags": [
+      "few-shot",
+      "zero-shot",
+      "in-context-learning",
+      "examples",
+      "classification"
+    ]
+  },
+  {
+    "id": "lesson-07",
+    "slug": "output-formats-and-constraints",
+    "title": "Output Formats and Constraints",
+    "level": "beginner",
+    "order": 7,
+    "duration": 22,
+    "file": "beginner/output-formats-and-constraints.md",
+    "summary": "How to get output in exactly the shape you need (lists, tables, templates, machine-readable text), how to phrase constraints so they work (positive instructions, real units, reasons), and how constraints can make output better rather than just shorter.",
+    "tags": [
+      "output-format",
+      "constraints",
+      "template-pattern",
+      "positive-instructions",
+      "guardrails"
+    ]
+  },
+  {
+    "id": "lesson-08",
+    "slug": "iterative-refinement",
+    "title": "Iterate, Debug, and Refine",
+    "level": "beginner",
+    "order": 8,
+    "duration": 24,
+    "file": "beginner/iterative-refinement.md",
+    "summary": "How to improve a prompt systematically: diagnose failures by symptom, change one thing at a time, test on varied inputs, let the model suggest better questions and alternatives, and keep a versioned prompt library.",
+    "tags": [
+      "iteration",
+      "debugging",
+      "question-refinement",
+      "prompt-library",
+      "troubleshooting"
+    ]
+  },
+  {
+    "id": "lesson-09",
+    "slug": "prompt-pattern-catalog",
+    "title": "The Prompt Pattern Catalog",
+    "level": "intermediate",
+    "order": 9,
+    "duration": 26,
+    "file": "intermediate/prompt-pattern-catalog.md",
+    "summary": "Prompt patterns as reusable solutions to recurring problems: the six categories of the catalog by White and colleagues, a map of seventeen patterns, deep dives into Meta Language Creation, Recipe, Outline Expansion, Semantic Filter, and Infinite Generation, and how to combine patterns safely.",
+    "tags": [
+      "prompt-patterns",
+      "meta-language",
+      "recipe-pattern",
+      "outline-expansion",
+      "semantic-filter"
+    ]
+  },
+  {
+    "id": "lesson-10",
+    "slug": "interaction-patterns",
+    "title": "Interaction Patterns: Let the Model Ask",
+    "level": "intermediate",
+    "order": 10,
+    "duration": 24,
+    "file": "intermediate/interaction-patterns.md",
+    "summary": "Patterns that change who drives the conversation: Flipped Interaction (the model interviews you), Cognitive Verifier (it breaks your question into sub-questions), and Game Play (it runs an interactive game), plus how to set stopping rules and keep state honest.",
+    "tags": [
+      "flipped-interaction",
+      "cognitive-verifier",
+      "game-play",
+      "clarifying-questions",
+      "conversation-design"
+    ]
+  },
+  {
+    "id": "lesson-11",
+    "slug": "chain-of-thought",
+    "title": "Chain-of-Thought Reasoning",
+    "level": "intermediate",
+    "order": 11,
+    "duration": 26,
+    "file": "intermediate/chain-of-thought.md",
+    "summary": "Chain-of-thought prompting, from the original few-shot method and the famous 'Let's think step by step' to structured reasoning with answer tags, how built-in reasoning models change the advice, and why a model's stated reasoning isn't proof of how it decided.",
+    "tags": [
+      "chain-of-thought",
+      "reasoning",
+      "zero-shot-cot",
+      "reasoning-models",
+      "faithfulness"
+    ]
+  },
+  {
+    "id": "lesson-12",
+    "slug": "self-consistency-and-verification",
+    "title": "Self-Consistency and Verification",
+    "level": "intermediate",
+    "order": 12,
+    "duration": 26,
+    "file": "intermediate/self-consistency-and-verification.md",
+    "summary": "Ways to make answers more reliable: self-consistency voting across several sampled reasoning paths, generate-critique-revise loops, the Reflection and Fact Check List patterns, and a hierarchy of verification methods from code checks to human review.",
+    "tags": [
+      "self-consistency",
+      "self-critique",
+      "reflection-pattern",
+      "fact-check-list",
+      "verification"
+    ]
+  },
+  {
+    "id": "lesson-13",
+    "slug": "sampling-parameters",
+    "title": "Sampling Parameters and Randomness",
+    "level": "intermediate",
+    "order": 13,
+    "duration": 26,
+    "file": "intermediate/sampling-parameters.md",
+    "summary": "How temperature, top-p, top-k, output limits, and stop sequences shape generation; why frontier models and APIs are removing sampling controls (Claude's API version 2026-10-21 rejects them); how to control variety and consistency without them; and a working call_llm implementation.",
+    "tags": [
+      "temperature",
+      "top-p",
+      "max-tokens",
+      "stop-sequences",
+      "api-basics"
+    ]
+  },
+  {
+    "id": "lesson-14",
+    "slug": "structured-outputs",
+    "title": "Structured Outputs and JSON",
+    "level": "intermediate",
+    "order": 14,
+    "duration": 26,
+    "file": "intermediate/structured-outputs.md",
+    "summary": "Getting reliable machine-readable output: prompting for JSON, designing schemas the model can fill honestly, validating and retrying in code, and using native structured-output features that guarantee schema-valid responses (but not true ones).",
+    "tags": [
+      "json",
+      "json-schema",
+      "structured-outputs",
+      "validation",
+      "pydantic"
+    ]
+  },
+  {
+    "id": "lesson-15",
+    "slug": "prompt-chaining",
+    "title": "Prompt Chaining and Decomposition",
+    "level": "intermediate",
+    "order": 15,
+    "duration": 26,
+    "file": "intermediate/prompt-chaining.md",
+    "summary": "Breaking a big task into a sequence of smaller prompts: sequential chains with checks between steps, routing, parallel map-and-combine, least-to-most decomposition, when built-in reasoning makes chains unnecessary, and how to stop errors from propagating.",
+    "tags": [
+      "prompt-chaining",
+      "decomposition",
+      "least-to-most",
+      "pipelines",
+      "map-reduce"
+    ]
+  },
+  {
+    "id": "lesson-16",
+    "slug": "context-management",
+    "title": "Long Context and Conversation Management",
+    "level": "intermediate",
+    "order": 16,
+    "duration": 26,
+    "file": "intermediate/context-management.md",
+    "summary": "How to work with what the model can see: laying out long documents (data first, question last, quotes before answers), the Context Manager pattern and why 'forget that' doesn't delete anything, and strategies for long conversations: summaries, trimming, memory, and caching stable prefixes.",
+    "tags": [
+      "long-context",
+      "context-window",
+      "context-manager",
+      "conversation-history",
+      "prompt-caching"
+    ]
+  },
+  {
+    "id": "lesson-17",
+    "slug": "advanced-reasoning-techniques",
+    "title": "Tree, Graph, and Step-Back Reasoning",
+    "level": "advanced",
+    "order": 17,
+    "duration": 28,
+    "file": "advanced/advanced-reasoning-techniques.md",
+    "summary": "Reasoning techniques beyond a single chain: Tree of Thoughts (explore, evaluate, backtrack), Graph of Thoughts (combine and refine ideas), step-back prompting, generated knowledge, and Auto-CoT, with honest guidance on cost and on when reasoning models make them unnecessary.",
+    "tags": [
+      "tree-of-thoughts",
+      "graph-of-thoughts",
+      "step-back-prompting",
+      "generated-knowledge",
+      "auto-cot"
+    ]
+  },
+  {
+    "id": "lesson-18",
+    "slug": "retrieval-augmented-generation",
+    "title": "Retrieval-Augmented Generation (RAG)",
+    "level": "advanced",
+    "order": 18,
+    "duration": 30,
+    "file": "advanced/retrieval-augmented-generation.md",
+    "summary": "Giving a model the right documents at question time: the RAG pipeline (chunk, index, retrieve, rerank, generate), sparse, dense, and hybrid retrieval, the prompt engineering inside RAG (query rewriting and grounded answer templates), and a runnable toy retriever.",
+    "tags": [
+      "rag",
+      "retrieval",
+      "embeddings",
+      "grounding",
+      "citations"
+    ]
+  },
+  {
+    "id": "lesson-19",
+    "slug": "tools-and-react-agents",
+    "title": "Tools, ReAct, and Agents",
+    "level": "advanced",
+    "order": 19,
+    "duration": 30,
+    "file": "advanced/tools-and-react-agents.md",
+    "summary": "How models act in the world: the ReAct pattern of interleaved reasoning and actions, modern tool use (function calling) and the loop that runs it, tool descriptions as prompt engineering, agent prompts with goals and stopping rules, multi-agent routing, and the safety limits agents need.",
+    "tags": [
+      "tool-use",
+      "function-calling",
+      "react",
+      "agents",
+      "excessive-agency"
+    ]
+  },
+  {
+    "id": "lesson-20",
+    "slug": "multimodal-and-cross-model",
+    "title": "Multimodal and Cross-Model Prompting",
+    "level": "advanced",
+    "order": 20,
+    "duration": 26,
+    "file": "advanced/multimodal-and-cross-model.md",
+    "summary": "Prompting beyond plain text (images, documents, audio, and image generation) and across models: why the same prompt behaves differently on different models, how to write portable prompts, how to choose and combine models, and how to migrate prompts when models change.",
+    "tags": [
+      "multimodal",
+      "vision",
+      "image-generation",
+      "model-selection",
+      "portability"
+    ]
+  },
+  {
+    "id": "lesson-21",
+    "slug": "meta-prompting-and-automation",
+    "title": "Meta-Prompting and Automatic Prompt Engineering",
+    "level": "advanced",
+    "order": 21,
+    "duration": 28,
+    "file": "advanced/meta-prompting-and-automation.md",
+    "summary": "Using models to write, critique, and optimize prompts: prompt generators, Automatic Prompt Engineer (APE) and its search-and-score loop, guarding against overfitting with held-out test sets, and turning good prompts into automated workflows with humans still in the loop.",
+    "tags": [
+      "meta-prompting",
+      "automatic-prompt-engineering",
+      "prompt-optimization",
+      "workflow-automation",
+      "overfitting"
+    ]
+  },
+  {
+    "id": "lesson-22",
+    "slug": "evaluating-prompts",
+    "title": "Evaluating and Testing Prompts",
+    "level": "advanced",
+    "order": 22,
+    "duration": 30,
+    "file": "advanced/evaluating-prompts.md",
+    "summary": "Turning 'it looks good' into evidence: success criteria, test sets with edge cases, code-based, model-based, and human grading, the known biases of LLM judges, regression testing on every change, and monitoring prompts in production.",
+    "tags": [
+      "evaluation",
+      "test-sets",
+      "llm-as-a-judge",
+      "regression-testing",
+      "metrics"
+    ]
+  },
+  {
+    "id": "lesson-23",
+    "slug": "prompt-security-and-ethics",
+    "title": "Prompt Security, Safety, and Ethics",
+    "level": "advanced",
+    "order": 23,
+    "duration": 30,
+    "file": "advanced/prompt-security-and-ethics.md",
+    "summary": "Securing and responsibly designing LLM features: direct and indirect prompt injection, the OWASP Top 10 for LLM Applications, layered defenses and red-teaming, the Refusal Breaker pattern used ethically, and the S.H.I.E.L.D. checklist for bias, privacy, and transparency.",
+    "tags": [
+      "prompt-injection",
+      "owasp",
+      "red-teaming",
+      "bias",
+      "responsible-ai"
+    ]
+  },
+  {
+    "id": "lesson-24",
+    "slug": "capstone-production-prompt",
+    "title": "Capstone: Ship a Production Prompt",
+    "level": "advanced",
+    "order": 24,
+    "duration": 35,
+    "file": "advanced/capstone-production-prompt.md",
+    "summary": "Bringing the whole course together: take one real task from success criteria to a tested, secured, documented, and monitored prompt, with a prompt card, an evaluation report, a release gate, and a portfolio write-up of what you built.",
+    "tags": [
+      "capstone",
+      "production",
+      "prompt-card",
+      "release-checklist",
+      "portfolio"
+    ]
+  }
+]

@@ -1,0 +1,80 @@
+{
+  "id": "quiz-lesson-01",
+  "lessonId": "lesson-01",
+  "title": "What Is Prompt Engineering?",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What does a language model fundamentally do with your prompt?",
+      "options": [
+        { "id": "a", "text": "Looks up the answer in a database of verified facts" },
+        { "id": "b", "text": "Predicts the next token again and again, continuing the text in the way that best fits what it sees" },
+        { "id": "c", "text": "Runs a search engine query and copies the top result" },
+        { "id": "d", "text": "Translates the prompt into code and executes it" }
+      ],
+      "answer": "b",
+      "explanation": "A model generates one token at a time, each time predicting what best continues everything it has seen so far. That's why changing what it sees changes what it writes."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "prompt": "Which of these can be part of a prompt? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "Instructions describing the task" },
+        { "id": "b", "text": "Background context the model can't know" },
+        { "id": "c", "text": "Examples of the output you want" },
+        { "id": "d", "text": "The model's internal weights" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "A prompt holds instructions, context, input data, examples, and format guidance. The model's weights are fixed by training and aren't part of a prompt."
+    },
+    {
+      "id": "q3",
+      "type": "fill-blank",
+      "prompt": "Small chunks of text, such as whole words, parts of words, or punctuation, that a model reads and writes are called ____.",
+      "answer": ["tokens", "token"],
+      "explanation": "Text is split into tokens before the model reads it, and the model generates its answer one token at a time."
+    },
+    {
+      "id": "q4",
+      "type": "single-choice",
+      "prompt": "A model without web access is asked for this morning's top news. What's the best fix?",
+      "options": [
+        { "id": "a", "text": "Add 'Be accurate!' to the prompt" },
+        { "id": "b", "text": "Ask the same question five more times" },
+        { "id": "c", "text": "Use a tool with web search, or paste the articles and ask for a summary of those" },
+        { "id": "d", "text": "Ask the model to pretend it has internet access" }
+      ],
+      "answer": "c",
+      "explanation": "Prompting can't add knowledge the model lacks. Supply the information yourself or connect a tool that can fetch it."
+    },
+    {
+      "id": "q5",
+      "type": "ordering",
+      "prompt": "Put the steps of the prompt engineering loop in order.",
+      "items": [
+        { "id": "test", "text": "Test the prompt on real inputs" },
+        { "id": "design", "text": "Design a prompt with task, context, and format" },
+        { "id": "save", "text": "Save the version that works and note why" },
+        { "id": "refine", "text": "Refine one thing at a time" },
+        { "id": "inspect", "text": "Inspect the output against what you wanted" }
+      ],
+      "answer": ["design", "test", "inspect", "refine", "save"],
+      "explanation": "Good prompts come from a loop: design, test, inspect, refine (one change per round), then save what works."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each lever to the situation it fits best.",
+      "pairs": [
+        { "left": "Better prompting", "right": "Always the first thing to try" },
+        { "left": "Retrieval (RAG)", "right": "Large or frequently changing information" },
+        { "left": "Tools", "right": "Live data or exact calculation" },
+        { "left": "Fine-tuning", "right": "A narrow behavior needed at very large scale" }
+      ],
+      "explanation": "Prompting is free and instant, retrieval brings in large or changing documents, tools fetch live data or compute exactly, and fine-tuning changes default behavior at scale."
+    }
+  ]
+}

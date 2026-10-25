@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-09",
+  "lessonId": "lesson-09",
+  "title": "The Prompt Pattern Catalog",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What is the difference between a prompt pattern and a prompting technique?",
+      "options": [
+        { "id": "a", "text": "There is no difference; the terms are interchangeable" },
+        { "id": "b", "text": "A pattern is a reusable prompt structure; a technique is how you interact with the model using it" },
+        { "id": "c", "text": "Patterns only work in code; techniques only work in chat" },
+        { "id": "d", "text": "Techniques are older versions of patterns" }
+      ],
+      "answer": "b",
+      "explanation": "The Persona pattern is a structure. You can use it zero-shot, few-shot, or with chain-of-thought, which are techniques."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "prompt": "Which are categories in White et al.'s prompt-pattern catalog? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "Output Customization" },
+        { "id": "b", "text": "Error Identification" },
+        { "id": "c", "text": "Context Control" },
+        { "id": "d", "text": "Model Training" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "The six categories are Input Semantics, Output Customization, Error Identification, Prompt Improvement, Interaction, and Context Control."
+    },
+    {
+      "id": "q3",
+      "type": "fill-blank",
+      "prompt": "Defining a shorthand such as \"When I say #brief, I mean...\" uses the Meta ____ Creation pattern.",
+      "answer": ["language"],
+      "explanation": "Meta Language Creation defines shorthand the model interprets in a set way, but only while it stays in the conversation's context."
+    },
+    {
+      "id": "q4",
+      "type": "single-choice",
+      "prompt": "Why shouldn't you use a Meta Language shortcut to have a model generate passwords?",
+      "options": [
+        { "id": "a", "text": "Shortcuts can't contain numbers" },
+        { "id": "b", "text": "A language model is not a secure random generator; use a cryptographic tool like Python's secrets module" },
+        { "id": "c", "text": "Passwords are too long for the context window" },
+        { "id": "d", "text": "Models refuse all password requests" }
+      ],
+      "answer": "b",
+      "explanation": "Model output is predicted text, not cryptographic randomness. Generate secrets with a proper cryptographic generator."
+    },
+    {
+      "id": "q5",
+      "type": "match-pair",
+      "prompt": "Match each pattern to the problem it solves.",
+      "pairs": [
+        { "left": "Outline Expansion", "right": "Long documents come out shallow" },
+        { "left": "Semantic Filter", "right": "Sensitive details must be removed, the rest kept" },
+        { "left": "Recipe", "right": "You know some steps of a procedure but not all" },
+        { "left": "Infinite Generation", "right": "You want a stream of items without re-prompting" }
+      ],
+      "explanation": "Each pattern targets a recurring problem: depth, redaction, incomplete procedures, or continuous generation."
+    },
+    {
+      "id": "q6",
+      "type": "ordering",
+      "prompt": "Order the steps of the Outline Expansion pattern.",
+      "items": [
+        { "id": "expand", "text": "Expand the chosen bullet into a detailed sub-outline" },
+        { "id": "outline", "text": "Generate a bullet-point outline of the topic" },
+        { "id": "askagain", "text": "Ask which bullet to expand next" },
+        { "id": "ask", "text": "Ask the user which bullet to expand" }
+      ],
+      "answer": ["outline", "ask", "expand", "askagain"],
+      "explanation": "Outline first, let the user choose, expand that part, then repeat, keeping the user in control of structure and depth."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-17",
+  "lessonId": "lesson-17",
+  "title": "Tree, Graph, and Step-Back Reasoning",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What does Tree of Thoughts add that a single chain of thought lacks?",
+      "options": [
+        { "id": "a", "text": "Shorter answers" },
+        { "id": "b", "text": "Exploration of several candidate steps, evaluation, and backtracking" },
+        { "id": "c", "text": "Access to the internet" },
+        { "id": "d", "text": "A guarantee of correctness" }
+      ],
+      "answer": "b",
+      "explanation": "ToT searches over intermediate thoughts, keeping promising branches and abandoning dead ends, which a single linear chain can't do."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "prompt": "Which are the four components of Tree of Thoughts? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "Thought decomposition" },
+        { "id": "b", "text": "Thought generator" },
+        { "id": "c", "text": "State evaluator" },
+        { "id": "d", "text": "Search algorithm" }
+      ],
+      "answer": ["a", "b", "c", "d"],
+      "explanation": "ToT decides what a thought is, generates candidates, evaluates partial solutions, and searches (for example breadth- or depth-first)."
+    },
+    {
+      "id": "q3",
+      "type": "fill-blank",
+      "prompt": "Asking for the general principle behind a question before answering the specific question is called ____ prompting.",
+      "answer": ["step-back", "step back", "stepback"],
+      "explanation": "Step-back prompting (Zheng et al., 2023) improved several reasoning benchmarks by first eliciting abstractions and principles."
+    },
+    {
+      "id": "q4",
+      "type": "single-choice",
+      "prompt": "Why should you be careful with generated knowledge prompting in medical or legal questions?",
+      "options": [
+        { "id": "a", "text": "It's too slow" },
+        { "id": "b", "text": "The 'knowledge' comes from the same model and can be wrong, adding false confidence" },
+        { "id": "c", "text": "It only works in English" },
+        { "id": "d", "text": "It requires a vector database" }
+      ],
+      "answer": "b",
+      "explanation": "Generated facts aren't verified. For factual or high-stakes domains, retrieve knowledge from trusted sources instead."
+    },
+    {
+      "id": "q5",
+      "type": "match-pair",
+      "prompt": "Match each technique to its key idea.",
+      "pairs": [
+        { "left": "Graph of Thoughts", "right": "Merge, refine, and aggregate thoughts" },
+        { "left": "Auto-CoT", "right": "Build diverse CoT demonstrations automatically" },
+        { "left": "Generated knowledge", "right": "Generate relevant facts, then answer with them" },
+        { "left": "Single-prompt experts", "right": "Approximate a search inside one response" }
+      ],
+      "explanation": "Each technique extends chain-of-thought in a different direction, with different costs and risks."
+    },
+    {
+      "id": "q6",
+      "type": "ordering",
+      "prompt": "Order one round of a code-driven Tree of Thoughts beam search.",
+      "items": [
+        { "id": "prune", "text": "Keep the best few branches and prune the rest" },
+        { "id": "propose", "text": "Propose several next steps for each path in the frontier" },
+        { "id": "score", "text": "Score each candidate partial solution" },
+        { "id": "repeat", "text": "Repeat from the new frontier until the depth limit" }
+      ],
+      "answer": ["propose", "score", "prune", "repeat"],
+      "explanation": "Generate candidates, evaluate them, keep the best (beam), and repeat to the depth limit."
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "quiz-lesson-10",
+  "lessonId": "lesson-10",
+  "title": "Interaction Patterns: Let the Model Ask",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "You ask a chat model to secretly pick a number and tell you higher or lower. What actually happens?",
+      "options": [
+        { "id": "a", "text": "The model stores the number in hidden memory until the game ends" },
+        { "id": "b", "text": "There is no hidden number; nothing unwritten carries between turns, so hints may be inconsistent" },
+        { "id": "c", "text": "The model encrypts the number in its weights" },
+        { "id": "d", "text": "The chat app automatically creates a secure random number" }
+      ],
+      "answer": "b",
+      "explanation": "Only the visible conversation carries forward. Secret state and randomness should live in your code."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "prompt": "Which are good ways to stop a flipped interaction? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "A question budget, such as at most 6 questions" },
+        { "id": "b", "text": "A completion condition, such as 'when you know my budget and dates'" },
+        { "id": "c", "text": "An exit word like 'stop'" },
+        { "id": "d", "text": "Trusting the model to know when you're bored" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "Budgets, completion conditions, and exit words give the interaction a clear end. In apps, also enforce a hard cap in code."
+    },
+    {
+      "id": "q3",
+      "type": "fill-blank",
+      "prompt": "A fixed marker such as \"BRIEF:\" that a model outputs to tell your program it's finished is called a ____.",
+      "answer": ["sentinel", "sentinel value"],
+      "explanation": "A sentinel lets code detect the end of a phase reliably instead of guessing from free text."
+    },
+    {
+      "id": "q4",
+      "type": "single-choice",
+      "prompt": "What best describes the Cognitive Verifier pattern?",
+      "options": [
+        { "id": "a", "text": "The model checks its own grammar" },
+        { "id": "b", "text": "The model generates sub-questions for your question, collects your answers, and combines them into a final answer" },
+        { "id": "c", "text": "The model verifies your identity" },
+        { "id": "d", "text": "The model refuses questions it can't verify online" }
+      ],
+      "answer": "b",
+      "explanation": "Cognitive Verifier decomposes one question into the facts it depends on, then uses your answers to respond more accurately."
+    },
+    {
+      "id": "q5",
+      "type": "match-pair",
+      "prompt": "Match each pattern to its best use.",
+      "pairs": [
+        { "left": "Flipped Interaction", "right": "Personalized plans and project intake" },
+        { "left": "Cognitive Verifier", "right": "One fuzzy question that depends on unstated facts" },
+        { "left": "Game Play", "right": "Quizzes, practice, and training" },
+        { "left": "Ask-or-assume rule", "right": "Apps deciding when to clarify before acting" }
+      ],
+      "explanation": "Each pattern shifts who drives the conversation for a different purpose."
+    },
+    {
+      "id": "q6",
+      "type": "ordering",
+      "prompt": "Order the parts of the Flipped Interaction format.",
+      "items": [
+        { "id": "count", "text": "Ask [Z] questions at a time" },
+        { "id": "topic", "text": "Ask me questions about [X]" },
+        { "id": "until", "text": "until [condition Y] is met" }
+      ],
+      "answer": ["topic", "until", "count"],
+      "explanation": "The format is: Ask me questions about [X] until [condition Y] is met. Ask [Z] questions at a time."
+    }
+  ]
+}

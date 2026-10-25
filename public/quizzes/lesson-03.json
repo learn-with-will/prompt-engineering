@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-03",
+  "lessonId": "lesson-03",
+  "title": "Clarity and Specificity",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What is the colleague test (Anthropic's golden rule)?",
+      "options": [
+        { "id": "a", "text": "Ask a colleague to write the prompt for you" },
+        { "id": "b", "text": "If a colleague with minimal context would be confused by your prompt, the model will be too" },
+        { "id": "c", "text": "Only send prompts during work hours" },
+        { "id": "d", "text": "Always copy a colleague's best prompt" }
+      ],
+      "answer": "b",
+      "explanation": "The model is like a brilliant new employee with no context on your situation. If a colleague couldn't follow the prompt without asking questions, the model will have to guess."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "prompt": "Which details make a prompt more specific? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "Who the output is for" },
+        { "id": "b", "text": "How long it should be" },
+        { "id": "c", "text": "The format and tone" },
+        { "id": "d", "text": "Writing the whole prompt in capital letters" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "Audience, goal, reason, length, and format/tone remove guesswork. Capital letters add emphasis, not information, and can cause over-reaction in newer models."
+    },
+    {
+      "id": "q3",
+      "type": "fill-blank",
+      "prompt": "Markers such as triple quotes or XML-style tags that separate your instructions from pasted content are called ____.",
+      "answer": ["delimiters", "delimiter"],
+      "explanation": "Delimiters show where content begins and ends, so the model doesn't treat the content as instructions."
+    },
+    {
+      "id": "q4",
+      "type": "single-choice",
+      "prompt": "Which version of a formatting rule follows the advice to explain the why?",
+      "options": [
+        { "id": "a", "text": "Don't use tables." },
+        { "id": "b", "text": "NO TABLES. EVER." },
+        { "id": "c", "text": "This will be sent as an SMS, which can't display tables or formatting, so write plain sentences only." },
+        { "id": "d", "text": "Tables are bad." }
+      ],
+      "answer": "c",
+      "explanation": "With the reason (SMS can't show formatting), the model can also avoid bold text, bullets, and other things you didn't list."
+    },
+    {
+      "id": "q5",
+      "type": "match-pair",
+      "prompt": "Match each common mistake to its description.",
+      "pairs": [
+        { "left": "Overloaded prompt", "right": "Several unrelated tasks crammed into one request" },
+        { "left": "Cryptic prompt", "right": "\"Do that thing we discussed\"" },
+        { "left": "Missing context", "right": "\"Fix this\" without the error or the code" },
+        { "left": "Contradiction", "right": "\"Be brief\" plus \"cover every detail\"" }
+      ],
+      "explanation": "Each mistake forces the model to guess: which task, which shared memory, which missing input, or which of two incompatible instructions to follow."
+    },
+    {
+      "id": "q6",
+      "type": "ordering",
+      "prompt": "Put the letters of S.P.E.C.IFY in order by what they stand for.",
+      "items": [
+        { "id": "examples", "text": "Examples" },
+        { "id": "style", "text": "Style" },
+        { "id": "constraints", "text": "Constraints" },
+        { "id": "purpose", "text": "Purpose" }
+      ],
+      "answer": ["style", "purpose", "examples", "constraints"],
+      "explanation": "S.P.E.C.IFY stands for Style, Purpose, Examples, and Constraints, a final-pass checklist from Mark Austin's book."
+    }
+  ]
+}

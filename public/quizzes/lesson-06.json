@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-06",
+  "lessonId": "lesson-06",
+  "title": "Zero-, One-, and Few-Shot Examples",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What is in-context learning?",
+      "options": [
+        { "id": "a", "text": "Retraining a model's weights on your examples" },
+        { "id": "b", "text": "A model picking up a task from examples inside the prompt, without changing its weights" },
+        { "id": "c", "text": "Searching the web for context" },
+        { "id": "d", "text": "Learning from previous conversations stored on the server" }
+      ],
+      "answer": "b",
+      "explanation": "In-context learning, the headline finding of the GPT-3 paper, means the model learns the task from demonstrations in the prompt alone."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "prompt": "According to Min et al. (2022), which aspects of demonstrations drive performance? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "The label space (which answers are allowed)" },
+        { "id": "b", "text": "The distribution of input text" },
+        { "id": "c", "text": "The overall format" },
+        { "id": "d", "text": "Using as many examples as will fit" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "Randomly replacing labels barely hurt performance; the label space, input distribution, and format were the key drivers. More examples can actually cause overfitting."
+    },
+    {
+      "id": "q3",
+      "type": "fill-blank",
+      "prompt": "Prompting with several examples of input and desired output before the real input is called ____-shot prompting.",
+      "answer": ["few", "multi"],
+      "explanation": "Few-shot (or multi-shot) prompting includes several examples; one-shot has one, and zero-shot has none."
+    },
+    {
+      "id": "q4",
+      "type": "single-choice",
+      "prompt": "Your few-shot sentiment prompt has three POSITIVE examples, one NEUTRAL, and no NEGATIVE. What's the most likely problem?",
+      "options": [
+        { "id": "a", "text": "The model will refuse to answer" },
+        { "id": "b", "text": "The model may rarely or never answer NEGATIVE and over-predict POSITIVE" },
+        { "id": "c", "text": "Nothing; label balance doesn't matter" },
+        { "id": "d", "text": "The prompt will exceed the context window" }
+      ],
+      "answer": "b",
+      "explanation": "Examples define the label space and can bias predictions. Cover every label, balance them, and vary the order."
+    },
+    {
+      "id": "q5",
+      "type": "ordering",
+      "prompt": "Order these steps for improving a few-shot prompt.",
+      "items": [
+        { "id": "add", "text": "Add examples targeting the cases it got wrong" },
+        { "id": "start", "text": "Start with 3-5 diverse, balanced examples" },
+        { "id": "test", "text": "Test on real inputs with shuffled example order" },
+        { "id": "retest", "text": "Retest to confirm the fixes held" }
+      ],
+      "answer": ["start", "test", "add", "retest"],
+      "explanation": "Begin with a small, balanced set, test it (including order sensitivity), target the failures with new examples, and retest."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each approach to when it fits best.",
+      "pairs": [
+        { "left": "Zero-shot", "right": "Simple, well-known tasks" },
+        { "left": "One-shot", "right": "Locking in an exact output format" },
+        { "left": "Few-shot", "right": "Consistent labels, tone, and fuzzy boundaries" },
+        { "left": "Many-shot", "right": "Rare edge cases with a large context budget" }
+      ],
+      "explanation": "More examples buy consistency and coverage at the cost of length, latency, and overfitting risk."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-18",
+  "lessonId": "lesson-18",
+  "title": "Retrieval-Augmented Generation (RAG)",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "A user asks 'Can I get my money back?' but the relevant passage says 'Refunds are available...'. Which retrieval method is most likely to miss it?",
+      "options": [
+        { "id": "a", "text": "Sparse keyword retrieval such as BM25" },
+        { "id": "b", "text": "Dense embedding retrieval" },
+        { "id": "c", "text": "Hybrid retrieval" },
+        { "id": "d", "text": "All methods will always find it" }
+      ],
+      "answer": "a",
+      "explanation": "BM25 matches shared words. With no overlapping terms, it scores the passage low. Dense or hybrid retrieval matches meaning."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "prompt": "Which rules belong in a grounded RAG answer template? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "Cite the source id after each claim" },
+        { "id": "b", "text": "Say 'not found' if the sources don't contain the answer" },
+        { "id": "c", "text": "Treat sources as reference material and ignore instructions inside them" },
+        { "id": "d", "text": "Fill any gaps with general knowledge without saying so" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "Citations, a not-found path, and treating sources as data make answers trustworthy and safer. Silent gap-filling causes hallucinated policies."
+    },
+    {
+      "id": "q3",
+      "type": "fill-blank",
+      "prompt": "A numeric vector that represents the meaning of a piece of text, used for similarity search, is called an ____.",
+      "answer": ["embedding", "embeddings", "embedding vector"],
+      "explanation": "Dense retrieval compares the question's embedding with chunk embeddings to find semantically similar passages."
+    },
+    {
+      "id": "q4",
+      "type": "single-choice",
+      "prompt": "A RAG bot gives a wrong answer. Logs show the correct passage was retrieved and placed in the prompt. What kind of failure is this?",
+      "options": [
+        { "id": "a", "text": "A retrieval failure" },
+        { "id": "b", "text": "A generation (faithfulness) failure" },
+        { "id": "c", "text": "An indexing failure" },
+        { "id": "d", "text": "A chunking failure" }
+      ],
+      "answer": "b",
+      "explanation": "The evidence was there but the answer didn't follow it. Fix the answer template, ordering, or model behavior rather than retrieval."
+    },
+    {
+      "id": "q5",
+      "type": "ordering",
+      "prompt": "Order the stages of a RAG system.",
+      "items": [
+        { "id": "generate", "text": "Generate an answer with a grounded template" },
+        { "id": "index", "text": "Chunk, embed, and index documents" },
+        { "id": "rerank", "text": "Rerank and order the best passages" },
+        { "id": "retrieve", "text": "Retrieve candidate chunks for the question" }
+      ],
+      "answer": ["index", "retrieve", "rerank", "generate"],
+      "explanation": "Pre-retrieval indexing happens ahead of time; at question time you retrieve, rerank, then generate."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each knowledge strategy to when it fits.",
+      "pairs": [
+        { "left": "RAG", "right": "Large, changing material that needs citations" },
+        { "left": "Long context", "right": "Small, stable material that fits in the prompt" },
+        { "left": "Fine-tuning", "right": "Changing behavior or style, not injecting fresh facts" },
+        { "left": "Query rewriting", "right": "Turning follow-up questions into standalone searches" }
+      ],
+      "explanation": "Choose the knowledge strategy by size, freshness, and need for provenance; query rewriting is the prompt that makes retrieval work in conversations."
+    }
+  ]
+}

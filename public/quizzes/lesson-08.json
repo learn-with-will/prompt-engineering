@@ -1,0 +1,80 @@
+{
+  "id": "quiz-lesson-08",
+  "lessonId": "lesson-08",
+  "title": "Iterate, Debug, and Refine",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "You add a persona, three examples, and a new output format at once, and the output improves. What's the problem?",
+      "options": [
+        { "id": "a", "text": "Nothing; more changes are always better" },
+        { "id": "b", "text": "You can't tell which change helped, or whether one made something else worse" },
+        { "id": "c", "text": "Personas and examples can't be used together" },
+        { "id": "d", "text": "The model will reject prompts with too many changes" }
+      ],
+      "answer": "b",
+      "explanation": "Change one thing per round and rerun on the same inputs, so each effect has a known cause."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "prompt": "Which inputs belong in a small prompt test set? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "A typical case" },
+        { "id": "b", "text": "A long or messy case" },
+        { "id": "c", "text": "An edge case with missing information" },
+        { "id": "d", "text": "Only the single input the prompt already handles perfectly" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "A varied set (typical, minimal, long, edge, rule-triggering) catches overfitting. Testing only on the input you tuned for hides failures."
+    },
+    {
+      "id": "q3",
+      "type": "fill-blank",
+      "prompt": "The pattern where the model suggests a better version of your question before answering is called the Question ____ pattern.",
+      "answer": ["refinement"],
+      "explanation": "Question Refinement surfaces the details that matter, which is especially useful when you're new to a topic."
+    },
+    {
+      "id": "q4",
+      "type": "match-pair",
+      "prompt": "Match each symptom to the fix to try first.",
+      "pairs": [
+        { "left": "Generic, bland answer", "right": "Add audience, goal, and specific context" },
+        { "left": "Wrong format or extra chatter", "right": "Give a template or example; reply with only..." },
+        { "left": "Invents facts", "right": "Provide sources and allow 'not in the text'" },
+        { "left": "Copies example details", "right": "Diversify the examples" }
+      ],
+      "explanation": "Diagnosing by symptom points to the missing ingredient: context, format, grounding, or example diversity."
+    },
+    {
+      "id": "q5",
+      "type": "ordering",
+      "prompt": "Put the refinement loop in order.",
+      "items": [
+        { "id": "hypo", "text": "Hypothesize the cause" },
+        { "id": "run", "text": "Run the prompt on several inputs" },
+        { "id": "keep", "text": "Keep or revert, and log what you learned" },
+        { "id": "compare", "text": "Compare outputs to what you wanted" },
+        { "id": "change", "text": "Change one thing and rerun" }
+      ],
+      "answer": ["run", "compare", "hypo", "change", "keep"],
+      "explanation": "Run, compare, hypothesize, change one thing, then keep or revert and record the result."
+    },
+    {
+      "id": "q6",
+      "type": "single-choice",
+      "prompt": "A prompt only works after you send the same four follow-up corrections each time. What should you do?",
+      "options": [
+        { "id": "a", "text": "Keep sending the four corrections forever" },
+        { "id": "b", "text": "Fold the corrections into the base prompt and test it fresh" },
+        { "id": "c", "text": "Switch to a different chat app" },
+        { "id": "d", "text": "Shorten the prompt to one word" }
+      ],
+      "answer": "b",
+      "explanation": "A reusable prompt should work on its own. Rewrite it to include what the follow-ups taught you, then retest in a new conversation."
+    }
+  ]
+}
