@@ -1,0 +1,74 @@
+[
+  {
+    "id": "foundations",
+    "title": "Foundations & Model Mechanics",
+    "blurb": "Understand tokens, next-token prediction, context windows, and the iterative prompt design loop.",
+    "order": 1
+  },
+  {
+    "id": "prompt-craft",
+    "title": "Prompt Anatomy & Core Principles",
+    "blurb": "Master clarity, delimiters, structural building blocks, and reusable prompt templates.",
+    "order": 2
+  },
+  {
+    "id": "personas-examples",
+    "title": "Personas, Roles & Few-Shot Learning",
+    "blurb": "Use system personas, audience framing, and zero, one, and few-shot exemplars.",
+    "order": 3
+  },
+  {
+    "id": "formats-refinement",
+    "title": "Output Formats, Constraints & Refinement",
+    "blurb": "Control output shape, write enforceable constraints, and diagnose failure modes.",
+    "order": 4
+  },
+  {
+    "id": "prompt-patterns",
+    "title": "The Prompt Pattern Catalog",
+    "blurb": "Apply proven patterns including Meta Language, Recipe, Semantic Filter, and Flipped Interaction.",
+    "order": 5
+  },
+  {
+    "id": "reasoning-verification",
+    "title": "Reasoning & Self-Verification",
+    "blurb": "Unlock multi-step reasoning with Chain-of-Thought, self-consistency, and reflection loops.",
+    "order": 6
+  },
+  {
+    "id": "apis-structured-outputs",
+    "title": "APIs, Sampling & Structured Outputs",
+    "blurb": "Configure sampling parameters, call LLM APIs, and guarantee schema-valid JSON.",
+    "order": 7
+  },
+  {
+    "id": "chaining-context",
+    "title": "Prompt Chaining & Context Management",
+    "blurb": "Decompose complex tasks into sequential pipelines and manage conversation context.",
+    "order": 8
+  },
+  {
+    "id": "advanced-reasoning",
+    "title": "Tree, Graph & Step-Back Reasoning",
+    "blurb": "Explore complex problem spaces with Tree of Thoughts, Graph of Thoughts, and Step-Back prompting.",
+    "order": 9
+  },
+  {
+    "id": "rag-and-agents",
+    "title": "RAG, Tools & Autonomous Agents",
+    "blurb": "Ground models in external knowledge and empower them with tool calling and ReAct loops.",
+    "order": 10
+  },
+  {
+    "id": "multimodal-meta",
+    "title": "Multimodal Prompting & Meta-Prompting",
+    "blurb": "Prompt with images and documents, write cross-model prompts, and optimize with APE.",
+    "order": 11
+  },
+  {
+    "id": "evals-security-production",
+    "title": "Evaluation, Security & Production",
+    "blurb": "Grade prompts systematically, defend against prompt injection, and ship production prompts.",
+    "order": 12
+  }
+]

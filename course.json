@@ -1,0 +1,59 @@
+{
+  "$schema": "https://raw.githubusercontent.com/learn-with-will/course-shell/main/course.schema.json",
+  "id": "prompt-engineering",
+  "name": "Prompt Engineering Learn",
+  "subject": "Prompt Engineering",
+  "description": "Learn prompt engineering in five-minute bites: clear instructions, few-shot examples, patterns, chain-of-thought, structured outputs, RAG, agents, evals, and prompt security.",
+  "brand": {
+    "color": "#7c3aed",
+    "scale": {
+      "50": "#f5f3ff",
+      "100": "#ede9fe",
+      "200": "#ddd6fe",
+      "300": "#c4b5fd",
+      "400": "#a78bfa",
+      "500": "#8b5cf6",
+      "600": "#7c3aed",
+      "700": "#6d28d9",
+      "800": "#5b21b6",
+      "900": "#4c1d95",
+      "950": "#2e1065"
+    },
+    "gradient": ["#7c3aed", "#8b5cf6", "#06b6d4"],
+    "gradientDark": ["#a78bfa", "#8b5cf6", "#22d3ee"]
+  },
+  "home": {
+    "badge": "Grounded in Frontier Models & Research",
+    "headline": [
+      "Master prompt engineering in ",
+      "five-minute bites",
+      "."
+    ],
+    "searchExamples": [
+      "few-shot",
+      "chain-of-thought",
+      "rag"
+    ],
+    "featuredLesson": "what-is-a-prompt",
+    "featuredCode": {
+      "lang": "python",
+      "code": "prompt = f\"\"\"Classify customer sentiment (positive, neutral, negative).\n\nReview: {text}\nSentiment:\"\"\"\n\nresponse = call_llm(prompt)"
+    },
+    "quizPreview": {
+      "topic": "foundations",
+      "prompt": "What does an autoregressive language model fundamentally do?",
+      "options": [
+        "Queries an internal search engine for stored facts",
+        "Predicts the next token probability distribution given context",
+        "Executes deterministic logic rules written by developers"
+      ],
+      "selected": 1
+    }
+  },
+  "codeLanguages": [
+    "python",
+    "json",
+    "bash",
+    "yaml"
+  ]
+}

@@ -1,0 +1,261 @@
+[
+  {
+    "id": "lesson-01",
+    "slug": "what-is-prompt-engineering",
+    "title": "What Is Prompt Engineering?",
+    "lessons": [
+      "what-is-a-prompt",
+      "iterative-prompt-design",
+      "prompt-vs-finetuning-vs-rag"
+    ]
+  },
+  {
+    "id": "lesson-02",
+    "slug": "how-language-models-work",
+    "title": "How Language Models Read Your Prompt",
+    "lessons": [
+      "tokens-and-tokenization",
+      "next-token-prediction",
+      "context-window-mechanics",
+      "knowledge-cutoffs-and-drift"
+    ]
+  },
+  {
+    "id": "lesson-03",
+    "slug": "clarity-and-specificity",
+    "title": "Clarity and Specificity",
+    "lessons": [
+      "clarity-and-directness",
+      "delimiters-and-structure",
+      "positive-instructions"
+    ]
+  },
+  {
+    "id": "lesson-04",
+    "slug": "anatomy-of-a-prompt",
+    "title": "The Anatomy of a Prompt",
+    "lessons": [
+      "anatomy-of-a-prompt",
+      "the-create-framework",
+      "prompt-ordering-strategy",
+      "reusable-prompt-templates"
+    ]
+  },
+  {
+    "id": "lesson-05",
+    "slug": "roles-personas-and-audience",
+    "title": "Roles, Personas, and Audience",
+    "lessons": [
+      "persona-pattern",
+      "system-vs-user-prompts",
+      "audience-persona-pattern",
+      "persona-limits-and-evidence"
+    ]
+  },
+  {
+    "id": "lesson-06",
+    "slug": "few-shot-examples",
+    "title": "Zero-, One-, and Few-Shot Examples",
+    "lessons": [
+      "few-shot-prompting",
+      "crafting-effective-examples",
+      "demonstration-pitfalls"
+    ]
+  },
+  {
+    "id": "lesson-07",
+    "slug": "output-formats-and-constraints",
+    "title": "Output Formats and Constraints",
+    "lessons": [
+      "specifying-output-formats",
+      "enforcing-constraints",
+      "the-specify-framework"
+    ]
+  },
+  {
+    "id": "lesson-08",
+    "slug": "iterative-refinement",
+    "title": "Iterate, Debug, and Refine",
+    "lessons": [
+      "diagnosing-prompt-failures",
+      "question-refinement-pattern",
+      "alternative-approaches-pattern",
+      "maintaining-a-prompt-library"
+    ]
+  },
+  {
+    "id": "lesson-09",
+    "slug": "prompt-pattern-catalog",
+    "title": "The Prompt Pattern Catalog",
+    "lessons": [
+      "prompt-patterns-overview",
+      "meta-language-pattern",
+      "recipe-pattern",
+      "outline-expansion-pattern",
+      "semantic-filter-pattern"
+    ]
+  },
+  {
+    "id": "lesson-10",
+    "slug": "interaction-patterns",
+    "title": "Interaction Patterns: Let the Model Ask",
+    "lessons": [
+      "flipped-interaction-pattern",
+      "cognitive-verifier-pattern",
+      "game-play-pattern"
+    ]
+  },
+  {
+    "id": "lesson-11",
+    "slug": "chain-of-thought",
+    "title": "Chain-of-Thought Reasoning",
+    "lessons": [
+      "chain-of-thought-prompting",
+      "zero-shot-cot",
+      "reasoning-tags-and-models",
+      "faithfulness-of-explanations"
+    ]
+  },
+  {
+    "id": "lesson-12",
+    "slug": "self-consistency-and-verification",
+    "title": "Self-Consistency and Verification",
+    "lessons": [
+      "self-consistency-voting",
+      "generate-critique-revise-loop",
+      "reflection-and-fact-checking",
+      "verification-hierarchy"
+    ]
+  },
+  {
+    "id": "lesson-13",
+    "slug": "sampling-parameters",
+    "title": "Sampling Parameters and Randomness",
+    "lessons": [
+      "temperature-and-top-p",
+      "stop-sequences-and-limits",
+      "building-a-model-client"
+    ]
+  },
+  {
+    "id": "lesson-14",
+    "slug": "structured-outputs",
+    "title": "Structured Outputs and JSON",
+    "lessons": [
+      "prompting-for-json",
+      "native-structured-outputs",
+      "validating-with-pydantic",
+      "schema-valid-vs-factually-true"
+    ]
+  },
+  {
+    "id": "lesson-15",
+    "slug": "prompt-chaining",
+    "title": "Prompt Chaining and Decomposition",
+    "lessons": [
+      "sequential-prompt-chaining",
+      "routing-and-intent-classification",
+      "parallel-chains-and-map-reduce",
+      "least-to-most-prompting"
+    ]
+  },
+  {
+    "id": "lesson-16",
+    "slug": "context-management",
+    "title": "Long Context and Conversation Management",
+    "lessons": [
+      "document-placement-in-context",
+      "conversation-memory-strategies",
+      "prompt-caching-mechanics",
+      "context-manager-pattern"
+    ]
+  },
+  {
+    "id": "lesson-17",
+    "slug": "advanced-reasoning-techniques",
+    "title": "Tree, Graph, and Step-Back Reasoning",
+    "lessons": [
+      "tree-of-thoughts",
+      "graph-of-thoughts",
+      "step-back-prompting",
+      "generated-knowledge-prompting",
+      "auto-cot-mechanics",
+      "reasoning-trade-offs-and-costs"
+    ]
+  },
+  {
+    "id": "lesson-18",
+    "slug": "retrieval-augmented-generation",
+    "title": "Retrieval-Augmented Generation (RAG)",
+    "lessons": [
+      "rag-pipeline-architecture",
+      "hybrid-retrieval-strategies",
+      "rag-prompt-templates",
+      "citation-extraction-and-grounding"
+    ]
+  },
+  {
+    "id": "lesson-19",
+    "slug": "tools-and-react-agents",
+    "title": "Tools, ReAct, and Agents",
+    "lessons": [
+      "the-react-pattern",
+      "defining-tool-specifications",
+      "agent-loops-and-stopping-rules",
+      "excessive-agency-and-guardrails"
+    ]
+  },
+  {
+    "id": "lesson-20",
+    "slug": "multimodal-and-cross-model",
+    "title": "Multimodal and Cross-Model Prompting",
+    "lessons": [
+      "vision-prompting-techniques",
+      "cross-model-prompt-portability",
+      "prompt-migration-strategies"
+    ]
+  },
+  {
+    "id": "lesson-21",
+    "slug": "meta-prompting-and-automation",
+    "title": "Meta-Prompting and Automatic Prompt Engineering",
+    "lessons": [
+      "meta-prompting-principles",
+      "automatic-prompt-engineer",
+      "prompt-overfitting-and-splits",
+      "automating-prompt-workflows"
+    ]
+  },
+  {
+    "id": "lesson-22",
+    "slug": "evaluating-prompts",
+    "title": "Evaluating and Testing Prompts",
+    "lessons": [
+      "defining-evaluation-criteria",
+      "building-eval-test-sets",
+      "llm-as-a-judge",
+      "prompt-regression-testing"
+    ]
+  },
+  {
+    "id": "lesson-23",
+    "slug": "prompt-security-and-ethics",
+    "title": "Prompt Security, Safety, and Ethics",
+    "lessons": [
+      "direct-and-indirect-prompt-injection",
+      "defense-in-depth-for-prompts",
+      "system-prompt-leakage-defense",
+      "the-shield-ethical-framework"
+    ]
+  },
+  {
+    "id": "lesson-24",
+    "slug": "capstone-production-prompt",
+    "title": "Capstone: Ship a Production Prompt",
+    "lessons": [
+      "the-prompt-card-specification",
+      "production-release-gates",
+      "production-monitoring-and-drift"
+    ]
+  }
+]

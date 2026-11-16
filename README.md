@@ -1,102 +1,43 @@
-# Prompt Engineering Learning Portal
+# Prompt Engineering Learn
 
-A **frontend-only** course on prompt engineering, from beginner to advanced. Read Markdown lessons,
-take quizzes, and track your progress, all in the browser. No sign-up, no backend.
+The content of the Prompt Engineering course at <https://learn-with-will.github.io/prompt-engineering/>: 91 short lessons ("bites") in 12 topics, each teaching one idea in 3–5 minutes, plus a bank of 148 quiz questions. It covers foundations (prompt anatomy, tokenization, parameters, cutoffs, prompt vs fine-tuning vs RAG), prompt craft (clarity, specificity, delimiters, CREATE and SPECIFY frameworks, instructions vs demonstrations), personas and few-shot exemplars, output formats (JSON, YAML, Markdown, Pydantic validation, repair patterns), conversational and behavioral patterns (flipped interaction, cognitive verifier, alternative approaches, meta-language), reasoning and verification (Chain-of-Thought, Zero-Shot CoT, Self-Consistency, Least-to-Most, verification hierarchies), APIs and structured outputs (tool calling, JSON schema mode, function calling schemas, response healing), context optimization and chaining (task decomposition, routing, handoffs, prompt caching mechanics), advanced reasoning architectures (Tree of Thoughts, Graph of Thoughts, Step-Back Prompting, reasoning models like o1/o3 and Claude 3.7 Sonnet), RAG and autonomous agents (retrieval pipelines, hybrid search, grounding, ReAct pattern, tool specs, stopping rules, safety boundaries), multimodal and meta-prompting (vision prompting, cross-model portability, migration strategies, meta-prompting, Automatic Prompt Engineer, overfitting prevention), and evals, security, and production operations (rubrics, test sets, LLM-as-a-judge, regression testing, injection defense, system prompt protection, SHIELD ethical framework, prompt cards, release gates, drift monitoring).
 
-Live at **<https://learn-with-will.github.io/prompt-engineering/>**.
+This repository holds **content only**. The site itself (lesson reader, quizzes, progress, optional sign-in) is the shared [course shell](https://github.com/learn-with-will/course-shell), which every course uses.
 
-> An independent learning course, not affiliated with or endorsed by any AI company. Product names
-> such as ChatGPT, Claude, and Gemini are trademarks of their owners.
-
-## What this is
-
-The portal shell is built with React 19, Vite, TypeScript, React Router, Tailwind CSS v4, `marked`,
-and PrismJS. It renders a **24-lesson curriculum** that starts with how language models read a prompt
-and the habits behind good prompts (clarity, structure, roles, examples, formats, iteration), moves
-through the prompt pattern catalog and the core techniques (chain-of-thought, self-consistency,
-sampling parameters, structured outputs, chaining, long-context management), and finishes with
-production systems: tree- and graph-of-thought reasoning, RAG, tools and ReAct agents, multimodal and
-cross-model prompting, meta-prompting, evaluation, security and ethics, and a capstone that ships a
-tested prompt.
-
-The curriculum was designed from two books, Mark Austin's *How to Become a Prompt God* (2025) and
-Shivendra Srivastava and Naresh Vurukonda's *Prompt Engineering in Action* (Manning, MEAP 2025), and
-then re-grounded in vendor documentation and the research papers behind each technique. Every lesson
-is written in our own words; where a book's claim conflicts with a primary source, the lesson follows
-the primary source and says so. Volatile facts are marked "as of writing (October 2026)."
-
-The course is model-agnostic. Code examples call a `call_llm(prompt, system=None)` placeholder
-(defined in Lesson 1) so they work with any provider; Lesson 13 shows one real SDK implementation.
-
-Progress, bookmarks, and quiz scores live in `localStorage` under `prompt-engineering-learning-*`
-keys, so nothing leaves your machine.
-
-## Run it locally
-
-```bash
-npm install
-npm run dev        # start the dev server
-npm run build      # type-check + production build into dist/
-npm run preview    # serve the production build
-npm run manifest   # regenerate the course manifest from lesson front-matter
-npm run validate   # check lessons, quizzes, manifest, sections, and schemas
+```text
+course.json              name, brand colours, home page copy, code languages
+content/topics.json      the 12 topics
+content/lessons/*.md     one bite per file
+content/legacy.json      old long-lesson URLs → the bites that replaced them
+quiz/questions.json      the question bank
 ```
 
-## How the content works
+## Working on the course
 
-The app is **data-driven**, so adding a lesson needs no code changes:
+Clone the shell next to this folder, then run its commands with this folder as the argument:
 
-1. Write the lesson Markdown in `public/content/<level>/<slug>.md` with YAML front-matter
-   (including a `summary`).
-2. Add a quiz at `public/quizzes/lesson-NN.json`.
-3. Run `npm run manifest` to regenerate `public/content/course-manifest.json` from the front-matter,
-   then `npm run validate`.
+```bash
+git clone https://github.com/learn-with-will/course-shell.git ../course-shell
+cd ../course-shell
+npm ci
+npm run dev -- ../prompt-engineering                 # live preview at http://localhost:4200
+npm run validate -- ../prompt-engineering --strict   # the check the deploy runs
+```
 
-> **Code fences** must declare one of the highlighted languages: `python` (templates, voting,
-> chaining, retrieval, eval harnesses, SDK calls), `json` (schemas and API bodies), `bash`, `yaml`
-> (eval cases and prompt cards), or `text` (the prompts themselves, transcripts, output); see
-> `src/core/prism.ts`.
+Node 22.18 or later is required.
 
-## Curriculum
+## Adding a lesson
 
-**Beginner, foundations:** what is prompt engineering? · how language models read your prompt ·
-clarity and specificity · the anatomy of a prompt · roles, personas, and audience · zero-, one-, and
-few-shot examples · output formats and constraints · iterate, debug, and refine.
+1. Create `content/lessons/<slug>.md` with front-matter (`slug`, `title`, `topic`, `kind`, `summary`, `tags`, `related`) and the standard sections.
+2. Add questions for it to `quiz/questions.json` with `"topic"` and `"lesson"`.
+3. Run `npm run validate -- ../prompt-engineering --strict` from the shell folder.
 
-**Intermediate, patterns and techniques:** the prompt pattern catalog · interaction patterns ·
-chain-of-thought reasoning · self-consistency and verification · sampling parameters and randomness ·
-structured outputs and JSON · prompt chaining and decomposition · long context and conversation
-management.
+The rules (length limits, which visual fits which kind of information, the diagram syntax) are in the shell's [CONTENT_GUIDE.md](https://github.com/learn-with-will/course-shell/blob/main/CONTENT_GUIDE.md).
 
-**Advanced, systems and production:** tree, graph, and step-back reasoning · retrieval-augmented
-generation · tools, ReAct, and agents · multimodal and cross-model prompting · meta-prompting and
-automatic prompt engineering · evaluating and testing prompts · prompt security, safety, and ethics ·
-capstone: ship a production prompt.
+## Accuracy
 
-## Accuracy: no hallucination
+Facts and techniques are synthesized from academic literature (Wei et al., Zhou et al., Yao et al., Besta et al., Wang et al.), official provider documentation (Anthropic, OpenAI, Google DeepMind), and production industry standards.
 
-The authoring contract, including a checklist of easy-to-get-wrong facts verified on 2026-10-25 and
-the list of corrections to the source books, lives in `prompts/prompt-engineering-authoring-prompt.md`.
+## Deployment
 
-**Sources:**
-
-- **Anthropic**: *Prompting best practices*, evaluation guide, structured outputs, and the API
-  version 2026-10-21 migration guide (<https://platform.claude.com/docs>)
-- **OpenAI**: prompt engineering, reasoning, Structured Outputs, and evaluation guides, and the
-  Responses API reference (<https://platform.openai.com/docs>)
-- **Google**: *Prompt design strategies* for the Gemini API
-  (<https://ai.google.dev/gemini-api/docs/prompting-strategies>)
-- **OWASP**: *Top 10 for LLM Applications 2025* (<https://genai.owasp.org/llm-top-10/>)
-- **Research papers** on chain-of-thought, self-consistency, ReAct, Tree and Graph of Thoughts,
-  least-to-most, step-back, generated knowledge, Auto-CoT, APE, the prompt pattern catalog, RAG,
-  lost-in-the-middle, LLM-as-a-judge, indirect prompt injection, and more (full list with arXiv IDs
-  in the authoring contract)
-
-## Deploying
-
-Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds with `BASE_PATH=/<repo>/`
-and publishes `dist/` to GitHub Pages.
-
----
-
-React 19 · Vite · TypeScript · React Router · Tailwind CSS v4 · marked · PrismJS · localStorage.
+Pushing to `main` runs `.github/workflows/deploy.yml`, which calls the shell's reusable workflow: it validates this course in strict mode, builds it with the latest shell and publishes it to GitHub Pages. To pick up a shell change without a content change, run the workflow by hand from the Actions tab.
